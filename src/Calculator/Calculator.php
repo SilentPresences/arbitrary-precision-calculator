@@ -87,6 +87,7 @@ class Calculator
             throw new WrongTypeException("input must be of type 'float', 'int' or 'string' {$type} given");
         }
 
+        // Regex used instead of is_numeric. is_numeric allows scientific notation. bcmath does not
         if (!preg_match("/^(-)?[0-9]+(\.[0-9]+)?$/", $input)) {
             throw new WrongFormatException('the string input should be numeric');
         }
