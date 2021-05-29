@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: bcmath
+          ini-values: post_max_size=256M, max_execution_time=180
+          coverage: xdebug
+          tools: phpunit
+
+      - name: Composer install
+        run: composer install --prefer-dist
+
+      - name: Run Testsuite
+        run: vendor/bin/phpunit
+
+

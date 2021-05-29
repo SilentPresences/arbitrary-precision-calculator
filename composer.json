@@ -1,0 +1,19 @@
+{
+    "name": "marien/arbitrary-precision-calculator",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marien Pflaum",
+            "email": "marienpflaum@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Marien\\ArbitraryPrecisionCalculator\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "phpunit/phpunit": "^9.5"
+    }
+}
