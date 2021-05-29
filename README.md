@@ -1,5 +1,5 @@
 # arbitrary-precision-calculator
-This package adds a shell around the PHP bcmath functions add, subtract, multiply and divide. This makes it possible to not only use string but also use int and floats as input.
+This package adds a layer around the PHP bcmath functions add, subtract, multiply and divide. This makes it possible to not only use string but also use int and floats as input.
 
 How to use
 ````

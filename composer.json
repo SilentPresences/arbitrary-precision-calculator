@@ -1,5 +1,6 @@
 {
     "name": "marien/arbitrary-precision-calculator",
+    "description": "Layer around the add, subtract, divide, multiply bcmath methods. This package allows input of strings, floats and ints",
     "type": "library",
     "authors": [
         {
