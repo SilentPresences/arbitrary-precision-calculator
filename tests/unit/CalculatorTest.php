@@ -149,4 +149,79 @@ class CalculatorTest extends TestCase
 
         self::assertSame($expectedResult, $result);
     }
+
+    /**
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     */
+    public function testMultiplyWithLong(): void {
+        // Max long as specified by https://en.wikipedia.org/wiki/C_data_types
+        $long = '9223372036854775807';
+        $expectedResult = '9223372036854775807.0000';
+
+        $result = $this->calculator->multiply($long, 1);
+
+        self::assertSame($expectedResult, $result);
+    }
+
+    /**
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     * @throws DevideByZeroException
+     */
+    public function testModulo(): void
+    {
+        $num1 = '3.23';
+        $num2 = '3';
+        $expectedResult = '0.2300';
+
+        $result = $this->calculator->modulo($num1, $num2);
+
+        self::assertSame($expectedResult, $result);
+    }
+
+    /**
+     * @throws DevideByZeroException
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     */
+    public function testModuloDivideByZero(): void
+    {
+        $num1 = '5';
+        $num2 = '0';
+
+        self::expectException(DevideByZeroException::class);
+
+        $this->calculator->modulo($num1, $num2);
+    }
+
+    /**
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     */
+    public function testRaiseToThePower(): void
+    {
+        $num1 = '3.23';
+        $num2 = '3';
+        $expectedResult = '33.6982';
+
+        $result = $this->calculator->raiseToThePower($num1, $num2);
+
+        self::assertSame($expectedResult, $result);
+    }
+
+    /**
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     */
+    public function testRaiseToThePowerNegativeExponent(): void
+    {
+        $num1 = '3.23';
+        $num2 = '-2';
+        $expectedResult = '0.0958';
+
+        $result = $this->calculator->raiseToThePower($num1, $num2);
+
+        self::assertSame($expectedResult, $result);
+    }
 }

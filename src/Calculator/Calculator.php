@@ -40,8 +40,8 @@ class Calculator
     }
 
     /**
-     * @param $num1
-     * @param $num2
+     * @param string|float|int $num1
+     * @param string|float|int $num2
      * @return string
      * @throws DevideByZeroException
      * @throws WrongFormatException
@@ -51,11 +51,42 @@ class Calculator
     {
         $num2String = $this->formatInput($num2);
 
-        if(intval($num2String) === 0) {
+        if (intval($num2String) === 0) {
             throw new DevideByZeroException('num2 input is zero. Divides by zero are not possible');
         }
 
         return bcdiv($this->formatInput($num1), $num2String, $this->scale);
+    }
+
+    /**
+     * @param string|float|int $num1
+     * @param string|float|int $num2
+     * @return string|null
+     * @throws DevideByZeroException
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     */
+    public function modulo($num1, $num2)
+    {
+        $num2String = $this->formatInput($num2);
+
+        if (intval($num2String) === 0) {
+            throw new DevideByZeroException('num2 input is zero. Divides by zero are not possible');
+        }
+
+        return bcmod($this->formatInput($num1), $num2String, $this->scale);
+    }
+
+    /**
+     * @param string|float|int $num1
+     * @param string|float|int $num2
+     * @return string|null
+     * @throws WrongFormatException
+     * @throws WrongTypeException
+     */
+    public function raiseToThePower($num1, $num2)
+    {
+        return bcpow($this->formatInput($num1), $this->formatInput($num2), $this->scale);
     }
 
     /**
@@ -71,7 +102,7 @@ class Calculator
     }
 
     /**
-     * @param $input
+     * @param string|float|int $input
      * @return string
      * @throws WrongFormatException
      * @throws WrongTypeException

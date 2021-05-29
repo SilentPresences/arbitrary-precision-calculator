@@ -2,7 +2,9 @@
 
 namespace Marien\ArbitraryPrecisionCalculator\Exceptions;
 
-class WrongTypeException extends \Exception
+use Exception;
+
+class WrongTypeException extends Exception
 {
 
 }

@@ -1,20 +1,20 @@
 {
-    "name": "marien/arbitrary-precision-calculator",
-    "description": "Layer around the add, subtract, divide, multiply bcmath methods. This package allows input of strings, floats and ints",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Marien Pflaum",
-            "email": "marienpflaum@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Marien\\ArbitraryPrecisionCalculator\\": "src/"
-        }
-    },
-    "require": {
-        "php": ">=7.4",
-        "phpunit/phpunit": "^9.5"
+  "name": "marien/arbitrary-precision-calculator",
+  "description": "Layer around the add, subtract, divide, modulo, raiseToPower, multiply bcmath methods. This package allows input of strings, floats and ints",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Marien Pflaum",
+      "email": "marienpflaum@gmail.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Marien\\ArbitraryPrecisionCalculator\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "phpunit/phpunit": "^9.5"
+  }
 }
