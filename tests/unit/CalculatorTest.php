@@ -68,7 +68,7 @@ class CalculatorTest extends TestCase
     {
         $num1 = 1;
         $num2 = '-3.2234';
-        $expectedResult = '-2.2234';
+        $expectedResult = '-2.2239';
 
         $result = $this->calculator->add($num1, $num2);
 
